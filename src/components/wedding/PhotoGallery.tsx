@@ -60,8 +60,8 @@ export function PhotoGallery() {
           >
             <motion.img
               key={idx}
-              src={photos[idx].src}
-              alt={photos[idx].alt}
+              src={photos[idx]?.src}
+              alt={photos[idx]?.alt ?? ""}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}

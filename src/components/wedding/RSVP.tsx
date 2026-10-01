@@ -6,7 +6,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { rsvpService } from "@/services/rsvpService";
 import { Monogram, Reveal, SectionTitle } from "./Ornaments";
 
-export function RSVP({ guestName, token }: { guestName?: string | null; token?: string }) {
+export function RSVP({ guestName, token }: { guestName?: string | null | undefined; token?: string | undefined }) {
   const { t, b } = useLang();
   const [open, setOpen] = useState<null | boolean>(null); // initial attending choice
   return (
@@ -26,7 +26,7 @@ export function RSVP({ guestName, token }: { guestName?: string | null; token?: 
   );
 }
 
-function RsvpSheet({ initialAttending, guestName, token, onClose }: { initialAttending: boolean; guestName?: string | null; token?: string; onClose: () => void }) {
+function RsvpSheet({ initialAttending, guestName, token, onClose }: { initialAttending: boolean; guestName?: string | null | undefined; token?: string | undefined; onClose: () => void }) {
   const { t } = useLang();
   const id = useId();
   const [name, setName] = useState(guestName ?? "");
