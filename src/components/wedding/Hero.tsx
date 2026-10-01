@@ -14,7 +14,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
   const fade = (d: number) => ({
     initial: reduce ? false : { opacity: 0, y: 24 },
-    animate: ready ? { opacity: 1, y: 0 } : undefined,
+    animate: ready ? { opacity: 1, y: 0 } : {},
     transition: { duration: 1.6, delay: d, ease: [0.22, 1, 0.36, 1] as const },
   });
 
@@ -43,7 +43,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.div
             style={{ y }}
             initial={reduce ? false : { opacity: 0, scale: 1.04 }}
-            animate={ready ? { opacity: 1, scale: 1 } : undefined}
+            animate={ready ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative bg-pearl p-3 shadow-paper"
           >
@@ -52,7 +52,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.div
             style={{ y: y2 }}
             initial={reduce ? false : { opacity: 0, rotate: 0 }}
-            animate={ready ? { opacity: 1, rotate: -5 } : undefined}
+            animate={ready ? { opacity: 1, rotate: -5 } : {}}
             transition={{ duration: 1.8, delay: 0.8 }}
             className="absolute -bottom-10 -start-4 w-[38%] bg-pearl p-2 pb-6 shadow-print sm:-start-10"
           >

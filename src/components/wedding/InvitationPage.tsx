@@ -14,9 +14,9 @@ import { DressCode } from "./DressCode";
 import { RSVP } from "./RSVP";
 import { Footer } from "./Footer";
 
-export type GuestInfo = { name?: string | null; token?: string };
+export type GuestInfo = { name?: string | null; token?: string | undefined };
 
-export function InvitationPage({ guest }: { guest?: GuestInfo }) {
+export function InvitationPage({ guest }: { guest?: GuestInfo | undefined }) {
   return (
     <LanguageProvider>
       <Inner guest={guest} />
@@ -36,7 +36,7 @@ function LangSwitch() {
   );
 }
 
-function Inner({ guest }: { guest?: GuestInfo }) {
+function Inner({ guest }: { guest?: GuestInfo | undefined }) {
   const [opened, setOpened] = useState(false);
   const music = useRef<MusicHandle>(null);
 

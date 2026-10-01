@@ -64,7 +64,7 @@ export function InvitationIntro({ open, onOpen }: { open: boolean; onOpen: () =>
                 className="absolute left-1/2 -bottom-10 grid h-20 w-20 -translate-x-1/2 place-items-center rounded-full bg-emerald text-emerald-foreground shadow-print"
                 animate={opening ? { scale: [1, 1.15, 0], rotate: [0, -8, 20], opacity: [1, 1, 0] } : { scale: 1 }}
                 transition={{ duration: 1.1, ease: "easeInOut" }}
-                whileHover={reduce ? undefined : { scale: 1.05 }}
+                whileHover={reduce ? {} : { scale: 1.05 }}
               >
                 <span className="absolute inset-1.5 rounded-full border border-gold/60" aria-hidden />
                 <span className="font-display text-xl text-gold-soft">

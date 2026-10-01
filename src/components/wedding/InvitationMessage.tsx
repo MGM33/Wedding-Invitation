@@ -1,7 +1,7 @@
 import { useLang } from "@/i18n/LanguageContext";
 import { Divider, Reveal, Sprig } from "./Ornaments";
 
-export function GuestGreeting({ guestName }: { guestName?: string | null }) {
+export function GuestGreeting({ guestName }: { guestName?: string | null | undefined }) {
   const { t } = useLang();
   return (
     <Reveal className="text-center">
@@ -13,7 +13,7 @@ export function GuestGreeting({ guestName }: { guestName?: string | null }) {
   );
 }
 
-export function InvitationMessage({ guestName }: { guestName?: string | null }) {
+export function InvitationMessage({ guestName }: { guestName?: string | null | undefined }) {
   const { t } = useLang();
   return (
     <section className="relative overflow-hidden bg-pearl px-6 py-24 md:py-36">
