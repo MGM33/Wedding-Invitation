@@ -52,9 +52,9 @@ export function InvitationIntro({ open, onOpen }: { open: boolean; onOpen: () =>
 
               <Monogram size={64} className="mx-auto" />
               <p className="eyebrow mt-8">{t.together}</p>
-              <h1 className="mt-6 font-display text-[2.6rem] leading-none text-foreground break-words">{wedding.bride.firstName}</h1>
+              <h1 className="mt-6 font-display text-[2.2rem] leading-none text-foreground break-words">{wedding.bride.firstName}</h1>
               <p className="font-script text-gold-deep text-4xl my-1">&amp;</p>
-              <h1 className="font-display text-[2.6rem] leading-none text-foreground break-words">{wedding.groom.firstName}</h1>
+              <h1 className="font-display text-[2.2rem] leading-none text-foreground break-words">{wedding.groom.firstName}</h1>
               <p className="mt-6 eyebrow tracking-[0.4em]">{b(wedding.dateLabel)}</p>
 
               {/* wax seal */}

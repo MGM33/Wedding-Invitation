@@ -26,7 +26,7 @@ export function Petals() {
               ["--o" as string]: 0.35 + (i % 3) * 0.1,
               ["--dx" as string]: `${(i % 2 ? 1 : -1) * (40 + (i % 4) * 30)}px`,
               ["--rot" as string]: `${200 + i * 30}deg`,
-              animation: `petal-fall ${14 + (i % 5) * 3}s linear ${i * 2.3}s infinite`,
+              animation: `petal-fall ${14 + (i % 5) * 3}s linear ${i * 2.3}s infinite both`,
               willChange: "transform",
             }}
           />

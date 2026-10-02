@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- All editable wedding content lives in src/config/wedding.ts; components only read from it, so details change without touching UI.

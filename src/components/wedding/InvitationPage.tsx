@@ -14,12 +14,11 @@ import { DressCode } from "./DressCode";
 import { RSVP } from "./RSVP";
 import { Footer } from "./Footer";
 
-export type GuestInfo = { name?: string | null; token?: string | undefined };
 
-export function InvitationPage({ guest }: { guest?: GuestInfo | undefined }) {
+export function InvitationPage() {
   return (
     <LanguageProvider>
-      <Inner guest={guest} />
+      <Inner />
     </LanguageProvider>
   );
 }
@@ -36,7 +35,7 @@ function LangSwitch() {
   );
 }
 
-function Inner({ guest }: { guest?: GuestInfo | undefined }) {
+function Inner() {
   const [opened, setOpened] = useState(false);
   const music = useRef<MusicHandle>(null);
 
@@ -53,14 +52,14 @@ function Inner({ guest }: { guest?: GuestInfo | undefined }) {
       <LangSwitch />
       <main aria-hidden={!opened} className={opened ? "" : "h-dvh overflow-hidden"}>
         <Hero ready={opened} />
-        <InvitationMessage guestName={guest?.name} />
+        <InvitationMessage />
         <Countdown />
         <WeddingCalendar />
         <LoveStory />
         <PhotoGallery />
         <EventDetails />
         <DressCode />
-        <RSVP guestName={guest?.name} token={guest?.token} />
+        <RSVP />
         <Footer />
       </main>
     </>
