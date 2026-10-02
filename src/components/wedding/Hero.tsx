@@ -20,15 +20,15 @@ export function Hero({ ready }: { ready: boolean }) {
 
   return (
     <section ref={ref} className="relative overflow-hidden px-6 pt-16 pb-24 sm:pt-24 md:pb-32">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[1fr_1.05fr] md:gap-20">
-        <div className="text-center md:text-start order-2 md:order-1">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 md:grid-cols-[1fr_1.05fr] md:gap-20">
+        <div className="min-w-0 text-center md:text-start order-2 md:order-1">
           <motion.div {...fade(0.2)}><Monogram size={58} className="mx-auto md:mx-0" /></motion.div>
           <motion.p {...fade(0.4)} className="eyebrow mt-8">{t.gettingMarried}</motion.p>
-          <motion.h1 {...fade(0.6)} className="mt-5 font-display text-[3.2rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
+          <motion.h1 {...fade(0.6)} className="mt-5 font-display text-[2.5rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
             {wedding.bride.firstName}
           </motion.h1>
           <motion.p {...fade(0.8)} className="font-script text-gold-deep text-5xl my-1 md:ms-16">&amp;</motion.p>
-          <motion.h1 {...fade(1)} className="font-display text-[3.2rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
+          <motion.h1 {...fade(1)} className="font-display text-[2.5rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
             {wedding.groom.firstName}
           </motion.h1>
           <motion.div {...fade(1.2)} className="mt-10 flex items-center justify-center md:justify-start gap-4">
@@ -39,7 +39,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.p {...fade(1.3)} className="eyebrow mt-3">{b(wedding.city)}</motion.p>
         </div>
 
-        <div className="relative order-1 md:order-2 mx-auto w-full max-w-[420px] md:max-w-none">
+        <div className="relative min-w-0 order-1 md:order-2 mx-auto w-full max-w-[420px] md:max-w-none">
           <motion.div
             style={{ y }}
             initial={reduce ? false : { opacity: 0, scale: 1.04 }}
