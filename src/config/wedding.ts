@@ -16,7 +16,7 @@ export const wedding = {
   groom: { firstName: "[GROOM_NAME]", initial: "G" },
 
   /** Real ISO date-time used for countdown, calendar & .ics. Local time of the venue. */
-  dateISO: "2027-06-12T19:00:00",
+  dateISO: "2027-06-12T19:00:00", // [WEDDING_DATE_AND_TIME]
   /** Duration of the event in hours (for the calendar file). */
   durationHours: 6,
   /** Display strings — replace freely. */
