@@ -89,8 +89,28 @@ export const wedding = {
   },
 
   rsvp: {
-    yesMessage: "Hello ❤️\nThank you for the invitation.\nI would be happy to attend the wedding.",
-    noMessage: "Hello ❤️\nThank you so much for the invitation.\nUnfortunately, I will not be able to attend the wedding.",
+    /** Max people a guest can select (including themselves). */
+    maxGuests: 6,
+    /** The prewritten WhatsApp message — edit the wording freely. */
+    buildMessage: ({ name, attending, count, note }: { name: string; attending: boolean; count: number; note: string }) => {
+      const lines = attending
+        ? [
+            "Hello ❤️",
+            `This is ${name}.`,
+            "Thank you for the invitation.",
+            count === 1
+              ? "I would be happy to attend the wedding."
+              : `I would be happy to attend the wedding — we will be ${count} people in total.`,
+          ]
+        : [
+            "Hello ❤️",
+            `This is ${name}.`,
+            "Thank you so much for the invitation.",
+            "Unfortunately, I will not be able to attend the wedding.",
+          ];
+      if (note) lines.push("", note);
+      return lines.join("\n");
+    },
   },
 };
 
