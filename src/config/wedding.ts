@@ -12,8 +12,8 @@ import couple03 from "@/assets/couple-03.jpg";
 export type Bilingual = { en: string; ar: string };
 
 export const wedding = {
-  bride: { firstName: "[BRIDE_FIRST_NAME]", lastName: "[BRIDE_LAST_NAME]", initial: "B" },
-  groom: { firstName: "[GROOM_FIRST_NAME]", lastName: "[GROOM_LAST_NAME]", initial: "G" },
+  bride: { firstName: "[BRIDE_NAME]", initial: "B" },
+  groom: { firstName: "[GROOM_NAME]", initial: "G" },
 
   /** Real ISO date-time used for countdown, calendar & .ics. Local time of the venue. */
   dateISO: "2027-06-12T19:00:00",
@@ -24,19 +24,19 @@ export const wedding = {
   city: { en: "[WEDDING_CITY]", ar: "[المدينة]" } as Bilingual,
   rsvpDeadline: { en: "[RSVP_DEADLINE]", ar: "[آخر_موعد_للرد]" } as Bilingual,
 
-  contactPhone: "[CONTACT_PHONE]", // e.g. "201001234567" (digits only, for WhatsApp)
+  whatsappNumber: "[WHATSAPP_NUMBER]", // digits only with country code, e.g. "201001234567"
 
   ceremony: {
     venue: { en: "[CEREMONY_VENUE]", ar: "[مكان_الإكليل]" } as Bilingual,
     time: "[CEREMONY_TIME]",
     address: { en: "[CEREMONY_ADDRESS]", ar: "[عنوان_الإكليل]" } as Bilingual,
-    mapUrl: "[CEREMONY_MAP_URL]",
+    mapUrl: "[CEREMONY_GOOGLE_MAPS_LINK]",
   },
   reception: {
     venue: { en: "[RECEPTION_VENUE]", ar: "[مكان_الحفل]" } as Bilingual,
     time: "[RECEPTION_TIME]",
     address: { en: "[RECEPTION_ADDRESS]", ar: "[عنوان_الحفل]" } as Bilingual,
-    mapUrl: "[RECEPTION_MAP_URL]",
+    mapUrl: "[RECEPTION_GOOGLE_MAPS_LINK]",
   },
 
   schedule: [
@@ -47,7 +47,7 @@ export const wedding = {
   ],
 
   /** Background music. Put the file in /public/audio/ and set the path. */
-  music: { src: "/audio/[BACKGROUND_MUSIC_FILE].mp3", volume: 0.55 },
+  music: { src: "/audio/[BACKGROUND_MUSIC].mp3", volume: 0.55 },
 
   images: {
     hero: hero, // [HERO_PHOTO]
@@ -88,7 +88,10 @@ export const wedding = {
     ],
   },
 
-  rsvp: { maxGuestsDefault: 4, whatsappFollowUp: true },
+  rsvp: {
+    yesMessage: "Hello ❤️\nThank you for the invitation.\nI would be happy to attend the wedding.",
+    noMessage: "Hello ❤️\nThank you so much for the invitation.\nUnfortunately, I will not be able to attend the wedding.",
+  },
 };
 
 export type WeddingConfig = typeof wedding;
