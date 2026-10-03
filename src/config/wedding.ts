@@ -54,9 +54,7 @@ export const wedding = {
 
   rsvp: {
     /** Prewritten WhatsApp message — edit freely. */
-    yesMessage: "Hello ❤️
-Thank you so much for the invitation.
-I would be happy to attend the wedding — can't wait to celebrate with you!",
+    yesMessage: "Hello ❤️\nThank you so much for the invitation.\nI would be happy to attend the wedding — can't wait to celebrate with you!",
   },
 };
 
