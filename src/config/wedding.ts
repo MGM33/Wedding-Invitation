@@ -24,7 +24,6 @@ export const wedding = {
   city: { en: "[WEDDING_CITY]", ar: "[المدينة]" } as Bilingual,
   rsvpDeadline: { en: "[RSVP_DEADLINE]", ar: "[آخر_موعد_للرد]" } as Bilingual,
 
-  whatsappNumber: "[WHATSAPP_NUMBER]", // digits only with country code, e.g. "201001234567"
 
   ceremony: {
     venue: { en: "[CEREMONY_VENUE]", ar: "[مكان_الإكليل]" } as Bilingual,
@@ -53,8 +52,15 @@ export const wedding = {
 
 
   rsvp: {
-    /** Prewritten WhatsApp message — edit freely. */
-    yesMessage: "Hello ❤️\nThank you so much for the invitation.\nI would be happy to attend the wedding — can't wait to celebrate with you!",
+    /** Shown in the on-screen window after a guest accepts. Edit the wording freely. */
+    confirmation: {
+      script: { en: "with joy", ar: "بكل فرح" } as Bilingual,
+      headline: { en: "We're waiting for you", ar: "في انتظارك" } as Bilingual,
+      line: {
+        en: "Thank you from the bottom of our hearts — your presence is the greatest gift. Save the date and come celebrate with us.",
+        ar: "شكراً من قلوبنا — حضورك هو أغلى هدية. احفظ الموعد وتعالَ نحتفل معاً.",
+      } as Bilingual,
+    },
   },
 };
 
