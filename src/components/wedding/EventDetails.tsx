@@ -29,18 +29,6 @@ export function EventDetails() {
         ))}
       </div>
 
-      <Reveal className="mx-auto mt-24 max-w-md">
-        <p className="eyebrow text-center">{t.order}</p>
-        <ol className="relative mt-10 border-s border-gold/50 ms-[5.5rem]">
-          {wedding.schedule.map((s) => (
-            <li key={s.time} className="relative mb-9 ps-8 last:mb-0">
-              <span className="absolute -start-[5px] top-2 h-2.5 w-2.5 rotate-45 bg-gold" aria-hidden />
-              <span className="absolute -start-[5.5rem] top-0.5 w-[4.5rem] text-end font-display text-lg tabular text-gold-deep">{s.time}</span>
-              <span className="font-display text-xl">{b(s.label)}</span>
-            </li>
-          ))}
-        </ol>
-      </Reveal>
     </section>
   );
 }

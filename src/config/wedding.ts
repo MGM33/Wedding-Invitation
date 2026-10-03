@@ -39,12 +39,6 @@ export const wedding = {
     mapUrl: "[RECEPTION_GOOGLE_MAPS_LINK]",
   },
 
-  schedule: [
-    { time: "6:00 PM", label: { en: "Guest Arrival", ar: "وصول الضيوف" } },
-    { time: "7:00 PM", label: { en: "Ceremony", ar: "المراسم" } },
-    { time: "8:30 PM", label: { en: "Reception", ar: "الاستقبال" } },
-    { time: "9:00 PM", label: { en: "Dinner & Celebration", ar: "العشاء والاحتفال" } },
-  ],
 
   /** Background music. Put the file in /public/audio/ and set the path. */
   music: { src: "/audio/[BACKGROUND_MUSIC].mp3", volume: 0.55 },
@@ -55,62 +49,14 @@ export const wedding = {
     social: "[SOCIAL_PREVIEW_IMAGE]", // absolute https URL, 1200×630
   },
 
-  story: {
-    enabled: true,
-    moments: [
-      { date: "[STORY_MOMENT_01_DATE]", title: { en: "The Day We Met", ar: "يوم لقائنا" }, description: { en: "[STORY_MOMENT_01_DESCRIPTION] — a few lines about how it all began.", ar: "[وصف_اللحظة_الأولى]" }, image: couple01 },
-      { date: "[STORY_MOMENT_02_DATE]", title: { en: "Our First Adventure", ar: "مغامرتنا الأولى" }, description: { en: "[STORY_MOMENT_02_DESCRIPTION] — a place, a feeling, a memory.", ar: "[وصف_اللحظة_الثانية]" }, image: couple03 },
-      { date: "[STORY_MOMENT_03_DATE]", title: { en: "She Said Yes", ar: "قالت نعم" }, description: { en: "[STORY_MOMENT_03_DESCRIPTION] — the question, the answer.", ar: "[وصف_اللحظة_الثالثة]" }, image: couple02 },
-      { date: "[WEDDING_DATE]", title: { en: "Forever Begins", ar: "يبدأ الأبد" }, description: { en: "And now, we'd love for you to be there.", ar: "والآن، نتمنى أن تكونوا معنا." }, image: hero },
-    ],
-  },
 
-  gallery: {
-    enabled: true,
-    photos: [
-      { src: couple01, alt: "The couple walking hand in hand along a seaside terrace", w: 896, h: 1152 },
-      { src: couple03, alt: "Candlelit reception table with white flowers at dusk", w: 1152, h: 864 },
-      { src: couple02, alt: "Bride's hand with engagement ring holding white roses", w: 1024, h: 1024 },
-      { src: hero, alt: "The couple embracing beneath an olive tree", w: 1024, h: 1408 },
-    ],
-  },
 
-  dressCode: {
-    enabled: true,
-    title: { en: "Formal · Black Tie Optional", ar: "رسمي · بدلة سوداء اختيارية" } as Bilingual,
-    note: { en: "We'd love to see you in soft, timeless tones.", ar: "يسعدنا أن نراكم بألوان هادئة وراقية." } as Bilingual,
-    swatches: [
-      { name: "Ivory", color: "oklch(0.96 0.015 85)" },
-      { name: "Champagne", color: "oklch(0.86 0.05 80)" },
-      { name: "Sage", color: "oklch(0.72 0.04 145)" },
-      { name: "Emerald", color: "oklch(0.38 0.06 160)" },
-      { name: "Charcoal", color: "oklch(0.3 0.01 60)" },
-    ],
-  },
 
   rsvp: {
-    /** Max people a guest can select (including themselves). */
-    maxGuests: 6,
-    /** The prewritten WhatsApp message — edit the wording freely. */
-    buildMessage: ({ name, attending, count, note }: { name: string; attending: boolean; count: number; note: string }) => {
-      const lines = attending
-        ? [
-            "Hello ❤️",
-            `This is ${name}.`,
-            "Thank you for the invitation.",
-            count === 1
-              ? "I would be happy to attend the wedding."
-              : `I would be happy to attend the wedding — we will be ${count} people in total.`,
-          ]
-        : [
-            "Hello ❤️",
-            `This is ${name}.`,
-            "Thank you so much for the invitation.",
-            "Unfortunately, I will not be able to attend the wedding.",
-          ];
-      if (note) lines.push("", note);
-      return lines.join("\n");
-    },
+    /** Prewritten WhatsApp message — edit freely. */
+    yesMessage: "Hello ❤️
+Thank you so much for the invitation.
+I would be happy to attend the wedding — can't wait to celebrate with you!",
   },
 };
 

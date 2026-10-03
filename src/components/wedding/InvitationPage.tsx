@@ -7,10 +7,7 @@ import { Hero } from "./Hero";
 import { InvitationMessage } from "./InvitationMessage";
 import { Countdown } from "./Countdown";
 import { WeddingCalendar } from "./WeddingCalendar";
-import { LoveStory } from "./LoveStory";
-import { PhotoGallery } from "./PhotoGallery";
 import { EventDetails } from "./EventDetails";
-import { DressCode } from "./DressCode";
 import { RSVP } from "./RSVP";
 import { Footer } from "./Footer";
 
@@ -55,10 +52,7 @@ function Inner() {
         <InvitationMessage />
         <Countdown />
         <WeddingCalendar />
-        <LoveStory />
-        <PhotoGallery />
         <EventDetails />
-        <DressCode />
         <RSVP />
         <Footer />
       </main>
