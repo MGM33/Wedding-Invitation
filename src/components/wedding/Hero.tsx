@@ -26,9 +26,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.p {...fade(0.4)} className="eyebrow mt-8">{t.gettingMarried}</motion.p>
           <motion.h1 {...fade(0.6)} className="mt-5 font-display text-[2.5rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
             {wedding.bride.firstName}
-          </motion.h1>
-          <motion.p {...fade(0.8)} className="font-script text-gold-deep text-5xl my-1 md:ms-16">&amp;</motion.p>
-          <motion.h1 {...fade(1)} className="font-display text-[2.5rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
+            <span className="block font-script text-gold-deep text-5xl my-1 md:ms-16">&amp;</span>
             {wedding.groom.firstName}
           </motion.h1>
           <motion.div {...fade(1.2)} className="mt-10 flex items-center justify-center md:justify-start gap-4">
