@@ -23,7 +23,7 @@ export function InvitationPage() {
 function LangSwitch() {
   const { lang, setLang } = useLang();
   return (
-    <div className="fixed z-40 flex items-center gap-2 bg-pearl/80 px-3 py-2 text-[0.7rem] tracking-[0.2em] backdrop-blur-sm"
+    <div className="fixed z-[60] flex items-center gap-2 bg-pearl/80 px-3 py-2 text-[0.7rem] tracking-[0.2em] backdrop-blur-sm"
       style={{ top: "calc(env(safe-area-inset-top) + 0.75rem)", insetInlineEnd: "0.75rem" }}>
       <button onClick={() => setLang("en")} aria-pressed={lang === "en"} className={`min-h-8 px-1 ${lang === "en" ? "text-gold-deep" : "text-muted-foreground"}`}>EN</button>
       <span className="text-gold/60" aria-hidden>|</span>
