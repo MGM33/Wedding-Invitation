@@ -45,7 +45,7 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative bg-pearl p-3 shadow-paper"
           >
-            <img src={wedding.images.hero} alt="Meriham and Peter together" width={750} height={938} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
+            <img src={assets/hero.jpg} alt="Meriham and Peter together" width={750} height={938} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
           </motion.div>
           <motion.div
             style={{ y: y2 }}
