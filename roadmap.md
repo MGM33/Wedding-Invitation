@@ -1,5 +1,5 @@
 # Roadmap
 
-- [x] Remove Our Story, Gallery, Order of the Day, Dress Code sections
-- [x] RSVP: accept only → direct WhatsApp link with warm message; decline, popup, guest count, name field removed
-- [x] Verified: no errors, no horizontal scroll, WhatsApp link correct at 390px
+- [ ] Set Meriham and Peter's supplied wedding date, start time, city, church, hall, and map links.
+- [ ] Use the uploaded couple portrait and a complementary small photo.
+- [ ] Remove unsupplied times, addresses, RSVP deadline, music, and assumed calendar end time; verify EN/AR invitation and RSVP.
