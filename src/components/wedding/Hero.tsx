@@ -45,7 +45,7 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative bg-pearl p-3 shadow-paper"
           >
-            <img src={wedding.images.hero} alt="The couple embracing beneath an olive tree" width={1024} height={1408} className="aspect-[4/5] w-full object-cover" fetchPriority="high" />
+            <img src={wedding.images.hero} alt="Meriham and Peter together" width={750} height={938} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
           </motion.div>
           <motion.div
             style={{ y: y2 }}
@@ -54,7 +54,7 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 1.8, delay: 0.8 }}
             className="absolute -bottom-10 -start-4 w-[38%] bg-pearl p-2 pb-6 shadow-print sm:-start-10"
           >
-            <img src={wedding.images.heroSecondary} alt="Bride's hand holding white roses" loading="lazy" width={1024} height={1024} className="aspect-square w-full object-cover" />
+            <img src={wedding.images.heroSecondary} alt="Ivory roses and plum ribbon" loading="lazy" width={1024} height={1024} className="aspect-square w-full object-cover" />
           </motion.div>
         </div>
       </div>

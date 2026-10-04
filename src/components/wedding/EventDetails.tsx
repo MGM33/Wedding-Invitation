@@ -6,8 +6,8 @@ import { Reveal, SectionTitle } from "./Ornaments";
 export function EventDetails() {
   const { t, b } = useLang();
   const events = [
-    { label: t.ceremony, ...wedding.ceremony },
-    { label: t.reception, ...wedding.reception },
+    { label: t.church, ...wedding.church },
+    { label: t.hall, ...wedding.hall },
   ];
   return (
     <section className="bg-pearl px-6 py-24 md:py-36">
@@ -19,8 +19,7 @@ export function EventDetails() {
               <div className="foil-frame pointer-events-none absolute inset-3" aria-hidden />
               <p className="font-script text-4xl text-gold-deep">{e.label}</p>
               <h3 className="mt-4 font-display text-3xl break-words">{b(e.venue)}</h3>
-              <p className="mt-3 font-display text-xl tabular text-gold-deep">{e.time}</p>
-              <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{b(e.address)}</p>
+              {"location" in e && e.location && <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{b(e.location)}</p>}
               <a href={e.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-lux mt-8">
                 <MapPin className="h-4 w-4" strokeWidth={1.2} />{t.viewMap}
               </a>
