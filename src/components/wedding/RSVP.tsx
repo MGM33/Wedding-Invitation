@@ -34,7 +34,6 @@ export function RSVP() {
       <SectionTitle title={t.rsvpQ} script="kindly reply" />
       <Reveal className="mt-8 text-center">
         <p className="mx-auto max-w-md font-display text-2xl italic leading-snug text-muted-foreground">{t.rsvpInvite}</p>
-        <p className="eyebrow mt-6">{t.rsvpBy} {b(wedding.rsvpDeadline)}</p>
         <div className="mt-10 flex justify-center">
           <button type="button" className="btn-solid" onClick={() => setConfirmed(true)}>
             {t.accept}
@@ -87,14 +86,14 @@ export function RSVP() {
                   <p className="eyebrow mb-2">{t.confirmedWhen}</p>
                   <p className="font-display text-2xl leading-snug">{b(wedding.dateLabel)}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    {wedding.reception.time} · {b(wedding.city)}
+                    {b(wedding.startTime)} · {b(wedding.city)}
                   </p>
                 </div>
                 <div>
                   <p className="eyebrow mb-2">{t.confirmedWhere}</p>
-                  <p className="font-display text-xl leading-snug break-words">{b(wedding.reception.venue)}</p>
-                  <p className="mx-auto mt-1 max-w-xs text-sm leading-relaxed text-muted-foreground">{b(wedding.reception.address)}</p>
-                  <a href={wedding.reception.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-lux mt-6">
+                  <p className="font-display text-xl leading-snug break-words">{b(wedding.hall.venue)}</p>
+                  <p className="mx-auto mt-1 max-w-xs text-sm leading-relaxed text-muted-foreground">{b(wedding.hall.location)}</p>
+                  <a href={wedding.hall.mapUrl} target="_blank" rel="noopener noreferrer" className="btn-lux mt-6">
                     <MapPin className="h-4 w-4" strokeWidth={1.2} />
                     {t.viewMap}
                   </a>

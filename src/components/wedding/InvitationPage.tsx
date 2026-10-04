@@ -1,7 +1,6 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { LanguageProvider, useLang } from "@/i18n/LanguageContext";
 import { InvitationIntro } from "./InvitationIntro";
-import { MusicPlayer, type MusicHandle } from "./MusicPlayer";
 import { Petals } from "./Petals";
 import { Hero } from "./Hero";
 import { InvitationMessage } from "./InvitationMessage";
@@ -34,17 +33,13 @@ function LangSwitch() {
 
 function Inner() {
   const [opened, setOpened] = useState(false);
-  const music = useRef<MusicHandle>(null);
-
   const open = () => {
-    music.current?.start();
     setTimeout(() => setOpened(true), 1900);
   };
 
   return (
     <>
       <InvitationIntro open={opened} onOpen={open} />
-      <MusicPlayer ref={music} visible={opened} />
       {opened && <Petals />}
       <LangSwitch />
       <main aria-hidden={!opened} className={opened ? "" : "h-dvh overflow-hidden"}>

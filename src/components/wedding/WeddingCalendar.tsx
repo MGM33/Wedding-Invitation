@@ -1,7 +1,5 @@
-import { CalendarPlus } from "lucide-react";
 import { wedding } from "@/config/wedding";
 import { useLang } from "@/i18n/LanguageContext";
-import { downloadIcs } from "@/lib/ics";
 import { Reveal, SectionTitle } from "./Ornaments";
 
 export function WeddingCalendar() {
@@ -18,7 +16,7 @@ export function WeddingCalendar() {
   );
   const monthName = date.toLocaleDateString(locale, { month: "long", year: "numeric" });
   const dayName = date.toLocaleDateString(locale, { weekday: "long" });
-  const time = date.toLocaleTimeString(locale, { hour: "numeric", minute: "2-digit" });
+  const time = lang === "ar" ? wedding.startTime.ar : wedding.startTime.en;
 
   return (
     <section className="px-6 py-24 md:py-32">
@@ -45,12 +43,9 @@ export function WeddingCalendar() {
           ))}
         </div>
         <div className="mt-12 grid grid-cols-3 border-y border-gold/40 py-5 text-center">
-          <div><p className="eyebrow">Day</p><p className="mt-1 font-display text-xl">{dayName}</p></div>
-          <div className="border-x border-gold/40"><p className="eyebrow">Date</p><p className="mt-1 font-display text-xl tabular">{date.toLocaleDateString(locale, { day: "numeric", month: "short" })}</p></div>
-          <div><p className="eyebrow">Time</p><p className="mt-1 font-display text-xl tabular">{time}</p></div>
-        </div>
-        <div className="mt-10 text-center">
-          <button onClick={downloadIcs} className="btn-lux"><CalendarPlus className="h-4 w-4" strokeWidth={1.2} />{t.addCal}</button>
+          <div><p className="eyebrow">{t.day}</p><p className="mt-1 font-display text-xl">{dayName}</p></div>
+          <div className="border-x border-gold/40"><p className="eyebrow">{t.date}</p><p className="mt-1 font-display text-xl tabular">{date.toLocaleDateString(locale, { day: "numeric", month: "short" })}</p></div>
+          <div><p className="eyebrow">{t.time}</p><p className="mt-1 font-display text-xl tabular">{time}</p></div>
         </div>
       </Reveal>
     </section>

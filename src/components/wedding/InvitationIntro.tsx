@@ -12,7 +12,7 @@ export function InvitationIntro({ open, onOpen }: { open: boolean; onOpen: () =>
   const handle = () => {
     if (opening) return;
     setOpening(true);
-    onOpen(); // starts music inside user gesture
+    onOpen();
   };
 
   const dust = Array.from({ length: reduce ? 0 : 26 });
