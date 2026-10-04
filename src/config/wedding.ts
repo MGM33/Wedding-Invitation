@@ -26,7 +26,6 @@ export const wedding = {
   },
   hall: {
     venue: { en: "Solitaire Wedding Hall", ar: "قاعة سوليتير للأفراح" } as Bilingual,
-    location: { en: "Tolip El Forsan Resort, Ismailia", ar: "منتجع توليب الفرسان، الإسماعيلية" } as Bilingual,
     mapUrl: "https://maps.app.goo.gl/bvhaBB6V7jVS5Uzb6?g_st=iw",
   },
 
