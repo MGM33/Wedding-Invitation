@@ -25,7 +25,7 @@ export const wedding = {
     mapUrl: "https://maps.app.goo.gl/NRQLWFqKXJstjLiK6",
   },
   hall: {
-    venue: { en: "Solitaire Wedding Hall", ar: "قاعة سوليتير للأفراح" } as Bilingual,
+    venue: { en: "Solitaire Wedding Hall at Tolip EL Forsan Resort", ar: "قاعة سوليتير في منتجع توليب الفرسان" } as Bilingual,
     mapUrl: "https://maps.app.goo.gl/bvhaBB6V7jVS5Uzb6?g_st=iw",
   },
 
