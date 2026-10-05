@@ -26,9 +26,7 @@ export function Monogram({ size = 72, className = "" }: { size?: number; classNa
         <path d="M50 2 v6 M50 92 v6 M2 50 h6 M92 50 h6" stroke="currentColor" strokeWidth="0.6" />
       </svg>
       <span className="font-display text-foil" style={{ fontSize: size * 0.32 }}>
-        {wedding.bride.initial}
-        <span className="font-script mx-0.5" style={{ fontSize: size * 0.26 }}>&amp;</span>
-        {wedding.groom.initial}
+        {wedding.groom.initial} {wedding.bride.initial}
       </span>
     </div>
   );

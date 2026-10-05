@@ -25,16 +25,15 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.div {...fade(0.2)}><Monogram size={58} className="mx-auto md:mx-0" /></motion.div>
           <motion.p {...fade(0.4)} className="eyebrow mt-8">{t.gettingMarried}</motion.p>
           <motion.h1 {...fade(0.6)} className="mt-5 font-display text-[2.5rem] leading-[0.95] sm:text-7xl lg:text-8xl break-words">
-            {wedding.bride.firstName}
-            <span className="block font-script text-gold-deep text-5xl my-1 md:ms-16">&amp;</span>
             {wedding.groom.firstName}
+            <span className="block font-script text-gold-deep text-5xl my-1 md:ms-16">&amp;</span>
+            {wedding.bride.firstName}
           </motion.h1>
           <motion.div {...fade(1.2)} className="mt-10 flex items-center justify-center md:justify-start gap-4">
             <span className="h-px w-10 bg-gold" />
             <p className="font-display text-xl tracking-wide">{b(wedding.dateLabel)}</p>
             <span className="h-px w-10 bg-gold" />
           </motion.div>
-          <motion.p {...fade(1.3)} className="eyebrow mt-3">{b(wedding.city)}</motion.p>
         </div>
 
         <div className="relative min-w-0 order-1 md:order-2 mx-auto w-full max-w-[420px] md:max-w-none">
@@ -45,7 +44,7 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative bg-pearl p-3 shadow-paper"
           >
-            <img src={wedding.images.hero} alt="Meriham and Peter together" width={750} height={938} className="aspect-[4/5] w-full object-cover object-top" fetchPriority="high" />
+            <img src={wedding.images.hero} alt={`${wedding.groom.firstName} and ${wedding.bride.firstName} together`} width={750} height={944} className="block h-auto w-full object-contain" fetchPriority="high" />
           </motion.div>
           <motion.div
             style={{ y: y2 }}

@@ -10,7 +10,7 @@ import flowers from "@/assets/white-roses-still-life.jpg";
 export type Bilingual = { en: string; ar: string };
 
 export const wedding = {
-  bride: { firstName: "Meriham", initial: "M" },
+  bride: { firstName: "Mirihan", initial: "M" },
   groom: { firstName: "Peter", initial: "P" },
 
   /** Real ISO date-time used for countdown, calendar & .ics. Local time of the venue. */
