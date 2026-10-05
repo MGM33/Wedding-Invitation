@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InvitationPage } from "@/components/wedding/InvitationPage";
 import { wedding } from "@/config/wedding";
 
-const title = `${wedding.bride.firstName} & ${wedding.groom.firstName}`;
+const title = `${wedding.groom.firstName} & ${wedding.bride.firstName}`;
 const description = `We're Getting Married — ${wedding.dateLabel.en}`;
 
 export const Route = createFileRoute("/")({

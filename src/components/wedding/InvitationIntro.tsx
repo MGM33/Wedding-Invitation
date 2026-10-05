@@ -53,9 +53,9 @@ export function InvitationIntro({ open, onOpen }: { open: boolean; onOpen: () =>
               <Monogram size={64} className="mx-auto" />
               <p className="eyebrow mt-8">{t.together}</p>
               <h1 className="mt-6 font-display text-[2.2rem] leading-none text-foreground break-words">
-                {wedding.bride.firstName}
-                <span className="block font-script text-gold-deep text-4xl my-1">&amp;</span>
                 {wedding.groom.firstName}
+                <span className="block font-script text-gold-deep text-4xl my-1">&amp;</span>
+                {wedding.bride.firstName}
               </h1>
               <p className="mt-6 eyebrow tracking-[0.4em]">{b(wedding.dateLabel)}</p>
 
@@ -70,7 +70,7 @@ export function InvitationIntro({ open, onOpen }: { open: boolean; onOpen: () =>
               >
                 <span className="absolute inset-1.5 rounded-full border border-gold/60" aria-hidden />
                 <span className="font-display text-xl text-gold-soft">
-                  {wedding.bride.initial}<span className="font-script text-base mx-0.5">&amp;</span>{wedding.groom.initial}
+                  {wedding.groom.initial} {wedding.bride.initial}
                 </span>
               </motion.button>
             </div>
