@@ -4,13 +4,12 @@
  *  Components read only from this file; no personal details live elsewhere.
  * ─────────────────────────────────────────────────────────────
  */
-import hero from "@/assets/meriham-peter.jpg.asset.json";
 import flowers from "@/assets/white-roses-still-life.jpg";
 
 export type Bilingual = { en: string; ar: string };
 
 export const wedding = {
-  bride: { firstName: "Mirihan", initial: "M" },
+  bride: { firstName: "Meriham", initial: "M" },
   groom: { firstName: "Peter", initial: "P" },
 
   /** Real ISO date-time used for countdown, calendar & .ics. Local time of the venue. */
@@ -30,7 +29,8 @@ export const wedding = {
   },
 
   images: {
-    hero: hero.url,
+    hero: "/images/peter-meriham.jpg",
+    music: "/audio/perfect.mp3",
     heroSecondary: flowers,
   },
 
