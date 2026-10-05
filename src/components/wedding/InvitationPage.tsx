@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { wedding } from "@/config/wedding";
+import { MusicButton } from "./MusicButton";
 import { LanguageProvider, useLang } from "@/i18n/LanguageContext";
 import { InvitationIntro } from "./InvitationIntro";
 import { Petals } from "./Petals";
@@ -31,17 +33,46 @@ function LangSwitch() {
   );
 }
 
+function fadeTo(a: HTMLAudioElement, target: number, ms = 2500) {
+  const start = a.volume;
+  const t0 = performance.now();
+  const step = (now: number) => {
+    const p = Math.min(1, (now - t0) / ms);
+    a.volume = start + (target - start) * p;
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
 function Inner() {
   const [opened, setOpened] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const play = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    a.volume = 0;
+    a.play().then(() => { setPlaying(true); fadeTo(a, 0.6); }).catch(() => setPlaying(false));
+  };
+  const toggle = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (a.paused) play();
+    else { a.pause(); setPlaying(false); }
+  };
   const open = () => {
+    play();
     setTimeout(() => setOpened(true), 1900);
   };
 
   return (
     <>
+      <audio ref={audioRef} src={wedding.images.music} loop preload="auto" />
       <InvitationIntro open={opened} onOpen={open} />
       {opened && <Petals />}
       <LangSwitch />
+      {opened && <MusicButton playing={playing} onToggle={toggle} />}
       <main aria-hidden={!opened} className={opened ? "" : "h-dvh overflow-hidden"}>
         <Hero ready={opened} />
         <InvitationMessage />
