@@ -1,21 +1,22 @@
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import { strict as assert } from "node:assert";
 import { wedding } from "./wedding";
 
 describe("wedding event rules", () => {
   test("church starts at 6 PM", () => {
-    expect(wedding.church.startTime.en).toBe("6:00 PM");
-    expect(wedding.church.startTime.ar).toBe("٦:٠٠ مساءً");
+    assert.equal(wedding.church.startTime.en, "6:00 PM");
+    assert.equal(wedding.church.startTime.ar, "٦:٠٠ مساءً");
   });
   test("hall starts at 8 PM", () => {
-    expect(wedding.hall.startTime.en).toBe("8:00 PM");
-    expect(wedding.hall.startTime.ar).toBe("٨:٠٠ مساءً");
+    assert.equal(wedding.hall.startTime.en, "8:00 PM");
+    assert.equal(wedding.hall.startTime.ar, "٨:٠٠ مساءً");
   });
   test("calendar remains at 6 PM on October 17", () => {
-    expect(wedding.startTime.en).toBe("6:00 PM");
-    expect(wedding.dateISO).toBe("2026-10-17T18:00:00+03:00");
+    assert.equal(wedding.startTime.en, "6:00 PM");
+    assert.equal(wedding.dateISO, "2026-10-17T18:00:00+03:00");
   });
   test("acceptance uses the existing church location", () => {
-    expect(wedding.rsvp.location).toBe("church");
-    expect(wedding[wedding.rsvp.location].mapUrl).toBe("https://maps.app.goo.gl/NRQLWFqKXJstjLiK6");
+    assert.equal(wedding.rsvp.location, "church");
+    assert.equal(wedding[wedding.rsvp.location].mapUrl, "https://maps.app.goo.gl/NRQLWFqKXJstjLiK6");
   });
 });
