@@ -12,6 +12,7 @@ export function RSVP() {
   const { t, b } = useLang();
   const [confirmed, setConfirmed] = useState(false);
   const c = wedding.rsvp.confirmation;
+  const location = wedding[wedding.rsvp.location];
 
   return (
     <section className="px-6 py-24 md:py-36">
@@ -50,9 +51,9 @@ export function RSVP() {
               </div>
               <div>
                 <p className="eyebrow mb-2">{t.confirmedWhere}</p>
-                <p className="font-display text-xl leading-snug break-words">{b(wedding.hall.venue)}</p>
+                <p className="font-display text-xl leading-snug break-words">{b(location.venue)}</p>
                 <Button asChild variant="outline" className="btn-lux mt-4 h-auto rounded-none whitespace-normal font-normal sm:mt-6">
-                  <a href={wedding.hall.mapUrl} target="_blank" rel="noopener noreferrer"><MapPin className="h-4 w-4" strokeWidth={1.2} />{t.viewMap}</a>
+                  <a href={location.mapUrl} target="_blank" rel="noopener noreferrer"><MapPin className="h-4 w-4" strokeWidth={1.2} />{t.viewMap}</a>
                 </Button>
               </div>
             </div>

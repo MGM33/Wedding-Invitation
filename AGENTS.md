@@ -12,3 +12,4 @@
 - All editable wedding content lives in src/config/wedding.ts; components only read from it, so details change without touching UI.
 - Render couple names and initials groom-first everywhere; derive the favicon from the same monogram to keep branding consistent.
 - Acceptance confirmation uses a portaled accessible dialog with viewport-constrained content so reveal transforms cannot break its positioning.
+- Keep venue times and the acceptance destination in wedding configuration, independent of the calendar start, so changing the reception cannot move the ceremony event.
