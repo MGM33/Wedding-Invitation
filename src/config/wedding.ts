@@ -20,10 +20,12 @@ export const wedding = {
 
 
   church: {
+    startTime: { en: "6:00 PM", ar: "٦:٠٠ مساءً" } as Bilingual,
     venue: { en: "St. Anba Bishoy Church", ar: "كنيسة الأنبا بيشوي" } as Bilingual,
     mapUrl: "https://maps.app.goo.gl/NRQLWFqKXJstjLiK6",
   },
   hall: {
+    startTime: { en: "8:00 PM", ar: "٨:٠٠ مساءً" } as Bilingual,
     venue: { en: "Solitaire Wedding Hall at Tolip EL Forsan Resort", ar: "قاعة سوليتير في منتجع توليب الفرسان" } as Bilingual,
     mapUrl: "https://maps.app.goo.gl/bvhaBB6V7jVS5Uzb6?g_st=iw",
   },
@@ -38,6 +40,7 @@ export const wedding = {
 
 
   rsvp: {
+    location: "church" as const,
     /** Shown in the on-screen window after a guest accepts. Edit the wording freely. */
     confirmation: {
       script: { en: "with joy", ar: "بكل فرح" } as Bilingual,
