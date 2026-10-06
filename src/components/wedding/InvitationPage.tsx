@@ -13,10 +13,12 @@ import { RSVP } from "./RSVP";
 import { Footer } from "./Footer";
 
 
-export function InvitationPage() {
+export type InvitationVariant = "semi" | "full";
+
+export function InvitationPage({ variant }: { variant: InvitationVariant }) {
   return (
     <LanguageProvider>
-      <Inner />
+      <Inner showHall={variant === "full"} />
     </LanguageProvider>
   );
 }
@@ -44,7 +46,7 @@ function fadeTo(a: HTMLAudioElement, target: number, ms = 2500) {
   requestAnimationFrame(step);
 }
 
-function Inner() {
+function Inner({ showHall }: { showHall: boolean }) {
   const [opened, setOpened] = useState(false);
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -78,7 +80,7 @@ function Inner() {
         <InvitationMessage />
         <Countdown />
         <WeddingCalendar />
-        <EventDetails />
+        <EventDetails showHall={showHall} />
         <RSVP />
         <Footer />
       </main>

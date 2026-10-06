@@ -3,16 +3,16 @@ import { wedding } from "@/config/wedding";
 import { useLang } from "@/i18n/LanguageContext";
 import { Reveal, SectionTitle } from "./Ornaments";
 
-export function EventDetails() {
+export function EventDetails({ showHall = true }: { showHall?: boolean }) {
   const { t, b } = useLang();
   const events = [
     { label: t.church, ...wedding.church },
-    { label: t.hall, ...wedding.hall },
+    ...(showHall ? [{ label: t.hall, ...wedding.hall }] : []),
   ];
   return (
     <section className="bg-pearl px-6 py-24 md:py-36">
       <SectionTitle title={t.celebration} />
-      <div className="mx-auto mt-16 grid max-w-5xl auto-rows-fr gap-10 md:grid-cols-2">
+      <div className={`mx-auto mt-16 grid max-w-5xl auto-rows-fr gap-10 ${events.length > 1 ? "md:grid-cols-2" : "max-w-xl"}`}>
         {events.map((e, i) => (
           <Reveal key={e.label} delay={i * 0.15} className="h-full min-w-0">
             <article className="paper-texture relative flex h-full flex-col items-center px-8 py-14 text-center">

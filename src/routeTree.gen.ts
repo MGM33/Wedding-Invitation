@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FullRouteImport } from './routes/full'
+import { Route as SemiRouteImport } from './routes/semi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FullRoute = FullRouteImport.update({
+  id: '/full',
+  path: '/full',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SemiRoute = SemiRouteImport.update({
+  id: '/semi',
+  path: '/semi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/full': typeof FullRoute
+  '/semi': typeof SemiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/full': typeof FullRoute
+  '/semi': typeof SemiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/full': typeof FullRoute
+  '/semi': typeof SemiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/full' | '/semi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/full' | '/semi'
+  id: '__root__' | '/' | '/full' | '/semi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FullRoute: typeof FullRoute
+  SemiRoute: typeof SemiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/full': {
+      id: '/full'
+      path: '/full'
+      fullPath: '/full'
+      preLoaderRoute: typeof FullRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/semi': {
+      id: '/semi'
+      path: '/semi'
+      fullPath: '/semi'
+      preLoaderRoute: typeof SemiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FullRoute: FullRoute,
+  SemiRoute: SemiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
